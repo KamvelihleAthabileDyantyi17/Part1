@@ -6,9 +6,33 @@
       xmlns:local="clr-namespace:Part1"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Admin">
+      Title="Admin"
+      Background="White">
+    <!-- Background set to White here -->
 
-    <Grid>
-        
-    </Grid>
+    <ScrollViewer>
+        <StackPanel Margin="20">
+            <TextBlock Text="Submit New Monthly Claim" FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Month/Period:"/>
+            <DatePicker x:Name="ClaimPeriodDatePicker" Margin="0,5,0,10"/>
+
+            <TextBlock Text="Hours Worked:"/>
+            <TextBox x:Name="HoursWorkedTextBox" Text="0" Margin="0,5,0,10"/>
+
+            <TextBlock Text="Hourly Rate (R):"/>
+            <TextBox x:Name="HourlyRateTextBox" Text="0.00" Margin="0,5,0,10" IsReadOnly="True"/>
+
+            <TextBlock Text="Total Claim Amount (R):"/>
+            <TextBox x:Name="TotalAmountTextBox" Text="0.00" Margin="0,5,0,20" FontWeight="Bold" IsReadOnly="True"/>
+
+            <TextBlock Text="Upload Supporting Document:"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="FilePathTextBox" Width="300" Margin="0,5,10,10" IsReadOnly="True"/>
+                <Button x:Name="BrowseButton" Content="Browse..." Width="80" Margin="0,5,0,10"/>
+            </StackPanel>
+
+            <Button x:Name="SubmitClaimButton" Content="Submit Claim for Approval" HorizontalAlignment="Right" Width="200" Height="30"/>
+        </StackPanel>
+    </ScrollViewer>
 </Page>

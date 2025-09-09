@@ -7,8 +7,20 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SubmitClaimPage">
+    <StackPanel Margin="20">
+        <TextBlock Text="My Claim History" FontSize="18" FontWeight="Bold" Margin="0,0,0,20"/>
 
-    <Grid>
-        
-    </Grid>
+        <!-- A DataGrid is perfect for showing tabular data like this -->
+        <DataGrid x:Name="ClaimsDataGrid" Height="300" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Claim ID" Binding="{Binding Id}" Width="80"/>
+                <DataGridTextColumn Header="Period" Binding="{Binding Period}" Width="100"/>
+                <DataGridTextColumn Header="Hours" Binding="{Binding Hours}" Width="60"/>
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Width="80"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="120"/>
+                <DataGridTextColumn Header="Date Submitted" Binding="{Binding DateSubmitted}" Width="120"/>
+                <!-- 'View' button column would be added here in a functional version -->
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
 </Page>

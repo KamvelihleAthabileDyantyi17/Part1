@@ -6,9 +6,24 @@
       xmlns:local="clr-namespace:Part1"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Dahsboard">
+      Title="Dahsboard"
+      Background="White">
+    <!-- Background set to White here -->
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <TextBlock x:Name="WelcomeText" Text="Welcome, [User Role]" FontSize="16" Margin="10"/>
+        <TextBlock Text="Dashboard Summary:" FontSize="14" FontWeight="Bold" Margin="10,20,10,0"/>
+        <!-- Example placeholders for data that would be dynamic -->
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Border BorderBrush="Black" BorderThickness="1" Margin="5" Padding="10">
+                <TextBlock Text="Pending Claims: 3"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="5" Padding="10">
+                <TextBlock Text="Approved Claims: 5"/>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="5" Padding="10">
+                <TextBlock Text="Rejected Claims: 1"/>
+            </Border>
+        </StackPanel>
+    </StackPanel>
 </Page>
